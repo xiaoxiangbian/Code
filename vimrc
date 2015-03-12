@@ -47,19 +47,16 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'summerfruit256.vim'
 NeoBundle 'industry.vim'
 
-
-
 " view
 NeoBundle 'bling/vim-airline'
-
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'winmanager'
 
 let neo_bundle_enabled=0
 if has('lua')
     NeoBundle 'Shougo/neocomplete.vim'
     let neo_bundle_enabled=1
 endif
-
- 
 
 call neobundle#end()
 
@@ -141,6 +138,49 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+"Taglist
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"TagList
+"打开Taglist/TxtBrowser窗口，在右侧栏显示
+nmap <leader>tl :Tlist<CR><c-l>
+" :Tlist              调用TagList
+let Tlist_Show_One_File        = 1             " 只显示当前文件的tags
+let Tlist_Exit_OnlyWindow      = 1             " 如果Taglist窗口是最后一个窗口则退出Vim
+let Tlist_Use_Left_Window      = 1             " 在右侧窗口中显示
+let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
+let Tlist_Sort_Type = 'name'                   " items in tags sorted by name
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
+let Tlist_Auto_Open=1                          " open taglist default
+let Tlist_Show_Menu=1                          "显示taglist菜单
+let Tlist_Auto_Open=1                          "启动vim自动打开taglist
+      
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+"WinManager
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:AutoOpenWinManager       = 1             "Always Show WinManager
+
+"设置界面分割
+"let g:winManagerWindowLayout = "BufExplorer,FileExplorer|TagList"
+let g:winManagerWindowLayout = "TagList|FileExplorer,BufExplorer"
+let g:winManagerWidth = 30                     "设置winmanager的宽度，默认为30
+
+"定义打开关闭winmanager按键
+nmap <silent> <F8> :WMToggle<cr>              
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+"CTags
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"生成一个tags文件
+nmap <F9> <Esc>:!ctags -R *<CR>
 
 " neocomplete
 if neo_bundle_enabled == 1

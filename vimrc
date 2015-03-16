@@ -159,7 +159,7 @@ set smartcase   " ... unless they contain at least one capital letter
 nmap <leader>tl :Tlist<CR><c-l>
 " :Tlist              调用TagList
 let Tlist_Show_One_File        = 1             " 只显示当前文件的tags
-let Tlist_Exit_OnlyWindow      = 1             " 如果Taglist窗口是最后一个窗口则退出Vim
+let Tlist_Exit_OnlyWindow      = 2             " 如果Taglist窗口是最后一个窗口则退出Vim
 let Tlist_Use_Left_Window      = 1             " 在右侧窗口中显示
 let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
 let Tlist_Sort_Type = 'name'                   " items in tags sorted by name
@@ -204,7 +204,13 @@ nmap <silent> <C-h> <C-w>h
 nmap <silent> <C-l> <C-w>l
 "nmap <silent> <TAB> <C-w>w
 
-" neocomplete
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+"NeoComplete
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+imap <TAB> <C-n>
 if neo_bundle_enabled == 1
     "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.

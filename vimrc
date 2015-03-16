@@ -153,10 +153,9 @@ let Tlist_Exit_OnlyWindow      = 1             " 如果Taglist窗口是最后一
 let Tlist_Use_Left_Window      = 1             " 在右侧窗口中显示
 let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
 let Tlist_Sort_Type = 'name'                   " items in tags sorted by name
-let Tlist_Ctags_Cmd='/usr/bin/ctags'
-let Tlist_Auto_Open=1                          " open taglist default
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+"let Tlist_Auto_Open=1                          " open taglist default
 let Tlist_Show_Menu=1                          "显示taglist菜单
-let Tlist_Auto_Open=1                          "启动vim自动打开taglist
       
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,3 +286,4 @@ if neo_bundle_enabled == 1
         set conceallevel=2 concealcursor=i
     endif
 endif
+

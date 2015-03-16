@@ -164,9 +164,10 @@ let Tlist_Use_Left_Window      = 1             " 在右侧窗口中显示
 let Tlist_File_Fold_Auto_Close = 1             " 自动折叠
 let Tlist_Sort_Type = 'name'                   " items in tags sorted by name
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-"let Tlist_Auto_Open=1                          " open taglist default
+"let Tlist_Auto_Open=1                         " open taglist default
 let Tlist_Show_Menu=1                          "显示taglist菜单
-      
+let Tlist_Process_File_Always=1                "实时更新tags
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 
@@ -180,8 +181,6 @@ let g:AutoOpenWinManager       = 1             "Always Show WinManager
 let g:winManagerWindowLayout = "TagList|FileExplorer,BufExplorer"
 let g:winManagerWidth = 30                     "设置winmanager的宽度，默认为30
 
-"定义打开关闭winmanager按键
-nmap <silent> <F8> :WMToggle<cr>              
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 
@@ -190,6 +189,20 @@ nmap <silent> <F8> :WMToggle<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "生成一个tags文件
 nmap <F9> <Esc>:!ctags -R *<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+"WinManager
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"定义打开关闭winmanager按键
+nmap <silent> <F8> :WMToggle<cr>              
+nmap <silent> <C-j> <C-w>j
+nmap <silent> <C-k> <C-w>k
+nmap <silent> <C-h> <C-w>h
+nmap <silent> <C-l> <C-w>l
+"nmap <silent> <TAB> <C-w>w
 
 " neocomplete
 if neo_bundle_enabled == 1
